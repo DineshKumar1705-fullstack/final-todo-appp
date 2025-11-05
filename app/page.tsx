@@ -13,6 +13,7 @@ interface GoogleUser {
 
 export default function LoginPage() {
   const [user, setUser] = useState<GoogleUser | null>(null);
+
   const router = useRouter();
 
   return (
@@ -24,6 +25,7 @@ export default function LoginPage() {
               Login with <span className="text-blue-600">Google</span>
             </h2>
             <div className="flex justify-center">
+
               <GoogleLogin
                 onSuccess={(credentialResponse) => {
                   if (credentialResponse.credential)
