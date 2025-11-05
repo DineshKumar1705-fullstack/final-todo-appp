@@ -26,7 +26,7 @@ export default function FeedbackPage() {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Handle submit and save locally
+  
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
