@@ -5,6 +5,7 @@ import { jwtDecode } from "jwt-decode";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+
 interface GoogleUser {
   name: string;
   email: string;
@@ -17,6 +18,8 @@ export default function LoginPage() {
   const router = useRouter();
 
   return (
+    <>
+      
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-100 via-white to-purple-100">
       <div className="bg-white shadow-2xl rounded-2xl p-10 max-w-sm w-full text-center">
         {!user ? (
@@ -25,7 +28,7 @@ export default function LoginPage() {
               Login with <span className="text-blue-600">Google</span>
             </h2>
             <div className="flex justify-center">
-
+            
               <GoogleLogin
                 onSuccess={(credentialResponse) => {
                   if (credentialResponse.credential)
@@ -72,5 +75,6 @@ export default function LoginPage() {
         )}
       </div>
     </div>
+    </>
   );
 }

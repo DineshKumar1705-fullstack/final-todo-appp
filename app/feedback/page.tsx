@@ -7,18 +7,18 @@ export default function FeedbackPage() {
   const [form, setForm] = useState({ name: "", feedback: "" });
   const [entries, setEntries] = useState<{ name: string; feedback: string }[]>([]);
 
-  // Load feedbacks from localStorage when component mounts
+  
   useEffect(() => {
     const saved = localStorage.getItem("feedbacks");
     if (saved) setEntries(JSON.parse(saved));
   }, []);
 
-  // Save to localStorage whenever entries change
+  
   useEffect(() => {
     localStorage.setItem("feedbacks", JSON.stringify(entries));
   }, [entries]);
 
-  // Handle input changes
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -47,7 +47,7 @@ export default function FeedbackPage() {
         Feedback Form
       </h1>
 
-      {/* Feedback Form */}
+      
       <form onSubmit={handleSubmit} className="flex flex-col gap-4 mb-8">
         <input
           type="text"
@@ -74,14 +74,13 @@ export default function FeedbackPage() {
         </button>
       </form>
 
-      {/* Home Button */}
-      <Link href="/todo">
+      <Link href="/articles">
         <button className="bg-cyan-600 text-white py-2 rounded hover:bg-cyan-700 flex mb-4 justify-center w-full">
-          🏠 Go to Todo Page
+          🏠 Back to News Page
         </button>
       </Link>
 
-      {/* Display Feedbacks */}
+      
       <h2 className="text-xl font-semibold mb-3">All Feedbacks</h2>
       {entries.length === 0 ? (
         <p className="text-gray-500">No feedback submitted yet.</p>
