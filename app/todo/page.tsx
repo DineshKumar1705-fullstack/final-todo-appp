@@ -99,7 +99,7 @@ export default function TodoList() {
             className="border rounded-lg p-4 shadow flex justify-between items-center"
           >
             <div>
-              <h3 className="text-lg font-semibold">{todo.title}</h3>
+              <h3 className="text-black font-semibold">{todo.title}</h3>
               <p className="text-gray-600">{todo.description}</p>
               <p
                 className={`text-sm ${
